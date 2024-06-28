@@ -65,6 +65,11 @@ padding-left: 62px;
 padding-top: 38px;
 padding-bottom: 16px;
 
+&::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
 &&::placeholder {
     color:#8B8B8B ;
     font-size: 13px;
@@ -86,7 +91,6 @@ export const MainButton = styled.button`
     opacity: 0px;
     border: none;
     margin-top: 2px;
-    margin-bottom: 20px;
     cursor: pointer;
 `
 
@@ -116,9 +120,8 @@ label {
 `
 
 export const ContainerBottom = styled.div`
-margin-top: 114px;
+margin-top: 68px;
 text-align: center;
-
 
 p {
 font-size: 13px;

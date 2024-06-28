@@ -1,9 +1,14 @@
 import BackButton from "../../components/backbutton/backbutton"
 import { ContainerLogin } from "../../components/container/styled"
-import { ContainerForm, ContainerText, ContainerTop, InputField, InputS, MainButton } from "./styled"
+import { ContainerBottom, ContainerForm, ContainerText, ContainerTop, InputField, InputS, LinkButton, MainButton } from "./styled"
 import leaf from "../../images/leaf.png"
 import * as I from 'react-bootstrap-icons'
 import { useState } from "react"
+
+import google from "../../images/google.png"
+import face from "../../images/face.png"
+import apple from "../../images/apple.png"
+import twitter from "../../images/twitter.png"
 
 const Login = () => {
 
@@ -12,6 +17,10 @@ const Login = () => {
     const togglePasswordVisibility = () => {
           setPasswordVisible(!passwordVisible);
         };
+
+    const loginAction = () => {
+        alert("Login realizado com sucesso")
+    }
 
 
     return (
@@ -37,9 +46,30 @@ const Login = () => {
                 <I.EyeFill color="#8B8B8B" size={24} onClick={togglePasswordVisibility} className="icon2"/>
                 <InputS type={passwordVisible ? "text" : "password"} placeholder="Enter your password" />
                 </InputField>
-                <MainButton>Login</MainButton>
+                <MainButton onClick={loginAction} >Login</MainButton>
                 <p>Forgot Password</p>
             </ContainerForm>
+            <ContainerBottom>
+                <p>Or Continue with Social Accouts</p>
+                <div className="socialcontainer">
+                <div className="socialBox">
+                    <img src={google} alt="google" />
+                </div>
+                <div className="socialBox">
+                <img src={face} alt="facebook" />
+                </div>
+                <div className="socialBox">
+                <img src={apple} alt="apple" />
+                </div>
+                <div className="socialBox">
+                <img src={twitter} alt="twitter" />
+                </div>
+                </div>
+                <p>Don`t have an account?
+                    <LinkButton to="/register"> Create Now </LinkButton>
+                </p>
+
+            </ContainerBottom>
         </ContainerLogin>
     )
 }
